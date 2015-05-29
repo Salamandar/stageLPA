@@ -45,10 +45,10 @@ module cache1() {
     epaisseur_plaque1   = 2;
     translate([0, position_plaque1])
         cube([boitier_int_largeur, epaisseur_plaque1, boitier_int_hauteur]);
-    translate([0 ,position_plaque1+epaisseur_plaque1])
-        cube([1,longueur_supports1, hauteur_supports1]);
-    translate([boitier_int_largeur-1, position_plaque1+epaisseur_plaque1])
-        cube([1,longueur_supports1, hauteur_supports1]);
+    //translate([0 ,position_plaque1+epaisseur_plaque1])
+    //    cube([1,longueur_supports1, hauteur_supports1]);
+    //translate([boitier_int_largeur-1, position_plaque1+epaisseur_plaque1])
+    //    cube([1,longueur_supports1, hauteur_supports1]);
     
     translate([boitier_int_largeur/2-5 ,position_plaque1+epaisseur_plaque1])
         cube([10,boitier_int_angle_radius+longueur_supports1-epaisseur_plaque1, 1.2]);
@@ -87,13 +87,14 @@ module trous_fils() {
 
 
 %boitier_int();
-#prises();
+//#prises();
 
 difference() {
     cache1();
-    translate([boitier_int_largeur/2,40,15])
+    translate([boitier_int_largeur/2,45,15])
         rotate([0,0,90]) rotate([0,90]) trous_fils();
 }
+
 difference() {
     cache2();
     translate([boitier_int_largeur/2,10, 10])
