@@ -1,0 +1,30 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+
+\title{Guide de câblage du cryostat à dillution}
+\author{Félix Piédallu}
+\date{Juin 2015}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+%Dans le cadre de mon stage, j'ai été amené à continuer le câblage du cryostat à dillution de Laure Bruhat.
+\end{abstract}
+
+\section{Câblage des lignes DC}
+\subsection{Bloc de filtrage}
+\subsubsection{Connexions du bloc}
+Le bloc est connecté grâce à des prises $\mu$D. Les vis d'entrée sont "maison", les vis de sortie sont des vis Allen 2.5mm.
+
+\subsubsection{Compartimentage du bloc}
+Afin de filtrer les micro-ondes des lignes DC, nous faisons passer les 17 câbles par un boîtier rempli d'Écosorb.
+
+Malheureusement, l'Écosorb peut abîmer les soudures et les câbles au bout de quelques cycles de refroidissement. Nous avons donc décidé de compartimenter ce boîtier pour protéger les connexions.
+
+Des pièces en PLA vont alors être imprimées. Elles ont été dessinées grâce à OpenSCAD et converties au format STL (que l'on peut trouver sur mon dépôt Git).
+\end{document}
