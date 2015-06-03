@@ -3,6 +3,23 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[francais]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!20!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\fois}{$\times$ }
+\newcommand{\uD}{$\mu$D }
+\newenvironment{BOM}
+  {% \begin{out}
+    \paragraph{B.o.M : } \begin{itemize}%
+  }{% \end{out}
+    \end{itemize}\medskip%
+  }
 
 \title{Guide de câblage du cryostat à dillution}
 \author{Félix Piédallu}
@@ -16,10 +33,27 @@
 %Dans le cadre de mon stage, j'ai été amené à continuer le câblage du cryostat à dillution de Laure Bruhat.
 \end{abstract}
 
+\section{Précautions à prendre}
+\subsection{Câbles RF}
+Les câbles RF coaxiaux sont assez fragiles. Il faut faire attention à ne pas les tordre. Notamment, il faut utiliser la clé dynamométrique pour visser les prises.
+
+\subsection{Prises \uD}
+Les prises \uD permettent de brancher les lignes DC. Il faut faire attention à ne pas trop appuyer sur les pattes pendant la soudure au risque de les casser (pas dramatique mais pas très pratique). Il faut mettre de la gaine thermorétractable sur au moins un câble sur deux (j'ai aussi mis de la grosse gaine thermo pour isoler les deux lignes).
+
+\section{Bill of Materials complète}
+
 \section{Câblage des lignes DC}
 \subsection{Bloc de filtrage}
+\label{subsec:DC/blocDeFiltrage}
+\begin{BOM}
+    \item 10 \fois Vis M2
+    \item 2 \fois Prises \uD femelle
+    \item 4 \fois Vis M1 + écrou + 2 rondelles (pour les prises)
+    \item \fois 
+\end{BOM}
+
 \subsubsection{Connexions du bloc}
-Le bloc est connecté grâce à des prises $\mu$D. Les vis d'entrée sont "maison", les vis de sortie sont des vis Allen 2.5mm.
+Le bloc est connecté grâce à des prises \uD. Les vis d'entrée sont "maison", les vis de sortie sont des vis Allen 2.5mm.
 
 \subsubsection{Compartimentage du bloc}
 Afin de filtrer les micro-ondes des lignes DC, nous faisons passer les 17 câbles par un boîtier rempli d'Écosorb.
@@ -27,4 +61,33 @@ Afin de filtrer les micro-ondes des lignes DC, nous faisons passer les 17 câble
 Malheureusement, l'Écosorb peut abîmer les soudures et les câbles au bout de quelques cycles de refroidissement. Nous avons donc décidé de compartimenter ce boîtier pour protéger les connexions.
 
 Des pièces en PLA vont alors être imprimées. Elles ont été dessinées grâce à OpenSCAD et converties au format STL (que l'on peut trouver sur mon dépôt Git).
+
+Les câbles sont enroulés (autour d'un tournevis ou d'un câble coax par exemple), afin de pouvoir mettre les 17 câbles dans le boîtier.
+
+\section{Câblage des lignes RF}
+
+\subsection{}
+\begin{BOM}
+    \item  \fois
+\end{BOM}
+
+
+\section{Câblage du porte-échantillon (commun RF et DC)}
+\begin{BOM}
+    \item 0 \fois Vis M2
+    \item 1 \fois Prise \uD mâle
+    \item 17 \fois Barette de connexion
+\end{BOM}
+\subsection{Cylindre support du porte-échantillon}
+Ce cylindre est assez fragile, il faut donc faire attention à ne pas le tordre.\medskip
+
+Les lignes DC arrivent du bloc de filtrage (section \ref{subsec:DC/blocDeFiltrage}) par une prise \uD mâle. Le boîtier cylindrique et son couvercle (à fixer après la prise…) sont vissés par des vis M2. Ces lignes sont connectées par des barrettes au porte-échantillon.\medskip
+
+Les lignes RF arrivent par les trous sur la partie supérieure du tube. On place des 
+% TODO nom ?
+afin de relier les câbles semi-flexibles aux câbles du porte-échantillon. Un câble est semi-felxible tandis que les 3 autres sont flexibles (pour faciliter le branchement).
+
+\subsection{Porte-échantillon}
+
+
 \end{document}
