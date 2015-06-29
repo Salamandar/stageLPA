@@ -10,6 +10,7 @@ done
 echo $EXECUTE
 gnuplot -persist <<- EOF
     set datafile separator ","
+    set for [i=1:1000] linestyle i lw 1
     $EXECUTE
 EOF
 
