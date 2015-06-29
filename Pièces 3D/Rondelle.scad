@@ -2,7 +2,7 @@ $fn=50;
 
 longueur = 12;
 
-diametre_int = 20.2;
+diametre_int = 20;
 diametre_ext = 33;
 ecartement_vis = 16;
 
