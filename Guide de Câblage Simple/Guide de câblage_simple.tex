@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{array}
 \usepackage[francais]{babel}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
@@ -14,6 +15,7 @@
 
 \newcommand{\fois}{$\times$ }
 \newcommand{\uD}{$\mu$D }
+\newcommand{\x}{$\times$ }
 \newenvironment{BOM}
   {% \begin{out}
     \paragraph{B.o.M : } \begin{itemize}%
@@ -38,6 +40,8 @@
     \item \fois 
 \end{BOM}
 
+\subsection{Tâbles de câblage}
+\input{tables_cablage}
 \subsection{Connexions du bloc}
 Le bloc est connecté grâce à des prises \uD. Les vis d'entrée sont "maison", les vis de sortie sont des vis Allen 2.5mm.
 
