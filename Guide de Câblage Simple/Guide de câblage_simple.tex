@@ -5,7 +5,8 @@
 \usepackage{array}
 \usepackage[francais]{babel}
 \usepackage[hidelinks]{hyperref}
-\usepackage{xcolor}
+\usepackage[top=2cm,left=2.5cm,right=2.5cm,bottom=2cm]{geometry} % Géométrie de la page, modifier selon le besoin
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \hypersetup{
     colorlinks,
     linkcolor={blue!20!black},
@@ -15,7 +16,11 @@
 
 \newcommand{\fois}{$\times$ }
 \newcommand{\uD}{$\mu$D }
+% Symbole ×
 \newcommand{\x}{$\times$ }
+% Texte de couleur rouge pour les lignes haute impédance
+\newcommand{\R}[1]{\textcolor{red}{#1}}
+
 \newenvironment{BOM}
   {% \begin{out}
     \paragraph{B.o.M : } \begin{itemize}%
@@ -31,34 +36,10 @@
 \maketitle
 \tableofcontents
 
+%\section{Tâbles de câblage}
+%\input{tables_cablage}
 \section{Boîtier de filtrage}
-
-\begin{BOM}
-    \item 10 \fois Vis M2
-    \item 2 \fois Prises \uD femelle
-    \item 4 \fois Vis M1 + écrou + 2 rondelles (pour les prises)
-    \item \fois 
-\end{BOM}
-
-\subsection{Tâbles de câblage}
-\input{tables_cablage}
-\subsection{Connexions du bloc}
-Le bloc est connecté grâce à des prises \uD. Les vis d'entrée sont "maison", les vis de sortie sont des vis Allen 2.5mm.
-
-\subsection{Compartimentage du bloc}
-Afin de filtrer les micro-ondes des lignes DC, nous faisons passer les 17 câbles par un boîtier rempli d'Écosorb.
-
-Malheureusement, l'Écosorb peut abîmer les soudures et les câbles au bout de quelques cycles de refroidissement. Nous avons donc décidé de compartimenter ce boîtier pour protéger les connexions.
-
-Des pièces en PLA vont alors être imprimées. Elles ont été dessinées grâce à OpenSCAD et converties au format STL.
-
-\subsection{Câblage du bloc}
-On utilise 17 câbles bleus de 80cm. Ces câbles sont entortillés autour d'une chute de câble coaxial. On les passe alors d'abord dans les pièces en PLA puis on les soude sur les prises \uD.
-
-\subsection{Préparation de l'Écosorb}
-On fait un mélange d'écosorb avec $1,18\%$ de catalyseur (en poids) : Ici on a mélangé 2,5g de catalyseur pour 212g de pâte. Il faut d'abord bien homogénéiser la pâte avant de mélanger.
-
-Le mélange sèche en quelques jours. Il faut donc faire attention à poser le bloc bien à l'horizontale (en pensant aux prises).
+\input{BoitierDeFiltrage}
 
 \section{Soudure des prises \uD}
 Les prises \uD sont assez fragiles, il ne faut pas appuyer trop sur les pins avec le fer. La technique est de remplir la pin d'étain, puis de glisser le fil dedans sans avoir à apporter d'étain.
@@ -72,55 +53,9 @@ On utilise une prise \uD (vis maison) que l'on fixe sur le bouchon de la canne. 
 Entre le boîtier de thermalisation et de filtrage, les câbles sont blindés par une tresse d'aluminium. Il est préférable de faire passer les câbles une fois qu'une prise \uD est soudée.
 
 \section{Câblage des lignes RF}
-\subsection{Guide de fabrication des câbles}
-Voici une liste des étapes à suivre pour fabriquer un câble coaxial connectorisé.
+\input{LignesRF}
 
-Il est préférable de cintrer le câble et de souder un connecteur avant de prendre les mesures et de couper le câble.
-
-On utilisera du matériel des deux mallettes.
-
-Il faut nettoyer le bout après chaque étape de limage/coupe avec de l'air sec.
-
-\begin{description}
-    \item[Cintrage du câble] On utilise la cintreuse. Pour chaque câble il faut faire un "U" pour éviter les interférences d'un étage à l'autre, et pour avoir une certaine souplesse du câble.
-    
-    Pour faire : 
-    \begin{itemize}
-        \item $1/4$ tour : il faut 15mm de câble
-        \item $1/2$ tour : il faut 29mm
-    \end{itemize}
-    %TODO inclure un schéma
-     \item[Dénudage] Il faut dénuder quelques millimètres du câble pour souder la pin sur l'âme du câble coaxial.
-     On utilisera le support \textbf{21B} ainsi que la petite scie. Il faut aller doucement sans appuyer, jusqu'à ce qu'on sente que c'est "lisse".
-     
-     Ensuite, il faut retirer la gaine avec un scalpel et limer pour retirer les restes d'isolant et pour adoucir les angles.
-     \item[Soudure de la pin centrale] On fixe la pin sur l'âme du câble, puis on serre le tout en place avec la pièce \textbf{W60} Il ne faut pas oublier l'entretoise \textbf{W56} entre la pin et l'isolant encore en place.
-     
-     Pour souder il suffit de chauffer l'extérieur de la pin tout en positionnant le fil d'étain sur le trou sur le bord de la pin.
-     \item[Soudure de la prise extérieur] On fixe sur la prise mâle une prise femelle factice \textbf{W14M (81)} qui permet de positionner comme il faut la prise. Comme à l'étape précédente on serre le tout en place.
-     
-     Le plus efficace est de faire un tortillon d'étain au-dessus de la prise, que l'on chauffe. En étant un peu patient l'étain va fondre et rentrer naturellement dans la prise.
-     \item[Fixation de l'isolant] La dernière étape est de mettre l'isolant entre la prise et la pin. on utilise la pièce \textbf{W52 (W53)}
-     que l'on serre à la clé dynamométrique. On place l'isolant à l'intérieur, et on pousse d'un coup avec la pièce complémentaire.
-     
-     \item[Mesure du câble nécessaire] Maintenant il faut prendre la dimension de câble à couper.
-     
-     Sur le montage il faut prendre la dimension entre les deux 
-     
-\end{description}
-
-\subsection{Dimensions des câbles RF}
-
-\subsection{Thermalisation des câbles RF}
-
-Les câbles RF se thermalisent grâce aux pinces dorées (sur les câbles \textit{et} sur les atténuateurs). On utilise l'Apiezon N pour avoir un bon contact thermique avec la pince.
-
-Une des vis de chaque pince permet de fixer un fil de cuivre doré (elle est donc plus longue que les autres).
-
-\begin{description}
-    \item[Sur câble Rg405 :] 3 vis 10mm + 1 vis 16mm
-    \item[Sur atténuateur :] 1 vis 16mm + 1 vis 2mm
-\end{description}
-
+\section{Caractérisation des câbles au VNA}
+\input{CaracVNA}
 
 \end{document}

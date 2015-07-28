@@ -1,0 +1,24 @@
+Il faut enfin caractériser les câbles coaxiaux fabriqués au VNA afin :
+\begin{itemize}
+    \item de vérifier qu'ils n'ont pas été abîmés (mal cintrés)
+    \item d'avoir les valeurs exactes d'atténuation des câbles à la fréquence de mesure, afin d'avoir une mesure la plus précise possible.
+\end{itemize}
+
+\subsection{Création de la nouvelle trace}
+\begin{itemize}
+    \item Il faut se placer dans une "fenêtre" libre (clic-droit > Créer fenêtre)
+    \item Menu Trace > New Trace.
+    \item Sélectionner les tracés correspondants aux ports utilisés (S33, S34, S43, S44 par exemple)
+    \item Sélectionner un Channel disponible pour ne pas risquer d'influencer d'autres mesures sur d'autres fenêtres.
+\end{itemize}
+
+\subsection{Paramètres du VNA}
+\begin{description}
+    \item[Nombre de points :] 12801 (menu Sweep)
+    \item[Puissance :] -20dB %TODO Vérifier
+    \item[Gamme de mesure :] 1GHz - 20GHz et 4-8GHz
+\end{description}
+
+\subsection{Calibration du VNA}
+Avant toute mesure il faut calibrer le VNA. Nous utilisons la calibration électronique (Boîtier%TODO trouver réf
+).

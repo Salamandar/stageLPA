@@ -4,7 +4,7 @@
 \usepackage{lmodern}
 \usepackage[francais]{babel}
 \addto{\captionsfrench}{\renewcommand{\abstractname}{Introduction}}
-%\usepackage[top=2cm,left=2.2cm,right=2.2cm,bottom=2cm]{geometry} % Géométrie de la page, modifier selon le besoin
+\usepackage[top=2cm,left=2.5cm,right=2.5cm,bottom=2cm]{geometry} % Géométrie de la page, modifier selon le besoin
 \usepackage{lmodern, wrapfig, textcomp, tikz, graphicx, amsmath, tikz-qtree, xcolor,rotating,epic,eepic}
 \usepackage[colorlinks,linkcolor=black, urlcolor=blue]{hyperref}
 \usepackage[babel=true,kerning=true]{microtype}
@@ -12,9 +12,14 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{array}
+\usepackage{xspace}
 \date{}
 \title{}
 \author{}
+
+\newcommand{\HeT}{$^3$He\xspace}
+\newcommand{\HeQ}{$^4$He\xspace}
+
 
 \begin{document}
 \nocite{*}
@@ -41,7 +46,28 @@ Les sujets de recherche sont essentiellement concentrés autour du transport qua
 \chapter*{Introduction} % Contexte du stage
 \addcontentsline{toc}{chapter}{Introduction}
 
-\chapter{Le cryostat à dillution}
+\chapter{L'expérience}
+\section{}
+
+\chapter{Le cryostat à dilution}
+Afin d'accéder à des températures de l'ordre que la dizaine de milliKelvins, l'équipe a décidé d'utiliser un cryostat à dilution sec.
+\section{Principe d'un cryostat à dilution}
+Le cryostat à dilution est basé sur certaines propriétés du mélange des isotopes d'Hélium \HeT et \HeQ.
+\newline
+
+Prenons un mélange équilibré liquide (donc pré-refroidi à 1K, nous verrons cela plus tard) ; l'\HeQ étant le plus lourd, il tombe au fond et l'\HeT flotte au-dessus.
+
+Ensuite, du point de vue des interactions quantiques dans chacun des liquides, on remarque que les interactions pour l'atome d'\HeT sont plus faibles que pour l'\HeQ : les premiers vont descendre dans la phase \HeQ, mais pas l'inverse.
+\newline
+Enfin, les atomes d'\HeT sont des Fermions, et le principe d'exclusion de Pauli s'y applique : la solubilité de l'\HeT dans l'\HeQ sera limitée aux environs de \{6,6\% \HeT, 93.4\% \HeQ\}.
+\newline
+
+On se trouve donc en présence de deux phases : celle, plus légère, d'\HeT pur, et celle de mélange \HeT/\HeQ.
+\newline
+
+
+
+
 
 \chapter{Le câblage DC et RF}
 
