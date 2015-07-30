@@ -15,10 +15,22 @@ Il faut enfin caractériser les câbles coaxiaux fabriqués au VNA afin :
 \subsection{Paramètres du VNA}
 \begin{description}
     \item[Nombre de points :] 12801 (menu Sweep)
-    \item[Puissance :] -20dB
+    \item[Puissance :] -20dB et Power On (Menu Power)
     \item[Gamme de mesure :] 1GHz - 20GHz et 4-8GHz
-    \item[IF Bandwidth :] 1kHz (menu Sweep)
+    \item[IF Bandwidth :] 1kHz (menu Avg)
 \end{description}
 
 \subsection{Calibration du VNA}
 Avant toute mesure il faut calibrer le VNA. Nous utilisons la calibration électronique (Boîtier N4691-6006).
+
+Menu Response > Cal Wizard
+
+Use Electronic Calibration (ECal) > 2 Port (sélectionner les ports branchés) > ECal Thru As... (do Orientation) > Cliquer sur Measure. > Finish (pas Save).
+
+\subsection{Lancement d'une mesure}
+Vérifier que l'on est en Power On. Dans le menu Trigger, cliquer sur Single (mesure unique).
+
+\subsection{Enregistrement d'une mesure}
+File > Save As. Filetype : CSV.
+
+Les fichiers sont nommés dans le format "yyyymmdd_cableX_GammeDeFréquences.csv".
