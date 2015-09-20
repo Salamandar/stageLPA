@@ -46,6 +46,9 @@ Les sujets de recherche sont essentiellement concentrés autour du transport qua
 \chapter*{Introduction} % Contexte du stage
 \addcontentsline{toc}{chapter}{Introduction}
 
+Laure Bruhat a entamé depuis plus de deux ans une thèse portant notamment sur la séparation des pares de Cooper intriquées dans une cavité micro-ondes et le transport quantique. Pour ce faire, elle a mis en place une expérience dans un cryostat à dilution sèche.
+
+
 \chapter{L'expérience}
 
 \section{Interaction d'électrons et de photons dans un nanotube de carbone}
@@ -70,6 +73,14 @@ $\rightarrow$ Contrôle excellent du signal envoyé $\rightarrow$ câbles coaxia
 \chapter{Le cryostat à dilution}
 Afin d'accéder à des températures de l'ordre que la dizaine de milliKelvins, l'équipe a décidé d'utiliser un cryostat à dilution sec.
 \section{Principe d'un cryostat à dilution}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{Images/Cryostat_Schema.pdf}
+    \qquad
+    \includegraphics[width=0.33\textwidth]{Images/Helium_phase_diagram.pdf}
+    \caption{Schéma du cryostat à dilution et diagramme de phase du mélange d'Hélium}
+  \end{center}
+\end{figure}
 Le cryostat à dilution est basé sur certaines propriétés du mélange des isotopes d'Hélium \HeT et \HeQ.
 \newline
 
@@ -77,22 +88,102 @@ Prenons un mélange équilibré liquide (donc pré-refroidi à 1K, nous verrons 
 
 Ensuite, du point de vue des interactions quantiques dans chacun des liquides, on remarque que les interactions pour l'atome d'\HeT sont plus faibles que pour l'\HeQ : les premiers vont descendre dans la phase \HeQ, mais pas l'inverse.
 \newline
+On se trouve donc en présence de deux phases : celle, plus légère, d'\HeT pur, et celle de mélange \HeT/\HeQ.
 Enfin, les atomes d'\HeT sont des Fermions, et le principe d'exclusion de Pauli s'y applique : la solubilité de l'\HeT dans l'\HeQ sera limitée aux environs de \{6,6\% \HeT, 93.4\% \HeQ\}.
 \newline
 
 On se trouve donc en présence de deux phases : celle, plus légère, d'\HeT pur, et celle de mélange \HeT/\HeQ.
 \newline
 
+Or la pompe (à température ambiante) impose une pression plus faible dans le still (~10Pa) qu'en entrée du circuit. L'\HeT va donc passer de la phase pure à la phase de mélange. Mais cette réaction de dilution est endothermique, ce qui fourni la puissance calorifique au cryostat.
+%TODO traduction de still
+
+Le mélange pompé va monter dans le still, où seul l'\HeT va s'évaporer. En effet, celui-ci a une pression partielle bien plus élevée que l'\HeQ, il va donc s'évaporer en premier par pression osmotique.
+
+Il va être réinjecté par la pompe pour réaugmenter la pression dans la phase pure d'\HeT et recommencer le cycle.
+\newline
+
+Les échangeurs thermiques permettent à l'\HeT réinjecté d'être remis à basse température pour ne pas réchauffer l'ensemble du cryostat. Cela permet aussi d'augmenter la température dans le still et permettre à l'\HeT de s'évaporer plus facilement.
 
 \section{Cryostat sec : Principe du tube à gaz pulsé}
+Le mélange doit être pré-refroidi avant d'être injecté dans le cryostat.\newline
+La plupart des cryostats utilisent un bain d'azote liquide à 77K qui permet aussi de nettoyer le mélange des impuretés, un bain d'\HeQ liquide à 4,2K, puis un bain d'\HeQ à faible pression à 1K (diminuer la pression de l'\HeQ permet d'abaisser son point de condensation).
+
+Ces derniers bains nécessitant un apport d'\HeQ, il peuvent être remplacé par un tube à gaz pulsé, d'où l'appellation de cryostat sec (mis à part le bain d'azote liquide qui est à l'extérieur du cryostat).
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{Images/Cryostat_PulseTube_Schema.png}
+        \caption{Schéma du tube à gaz pulsé}
+    \end{center}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{Images/PhotoCryostat}
+        \caption{Organisation du cryostat à dilution sèche}
+    \end{center}
+\end{figure}
 
 
 \chapter{Le câblage DC et RF}
-\section{Principe des câbles coaxiaux}
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{Images/Cablage_schema}
+        \caption{}
+        \label{fig:}
+    \end{center}
+\end{figure}
 
+Le câblage du cryostat consiste en deux parties : 
+\paragraph*{Les câbles DC : } ils véhiculent les signaux continus. Au nombre de 17, ils sont thermalisés à chaque étage pour limiter le bruit thermique.
+\paragraph*{Les câbles coaxiaux : } les deux grilles rapides, le signal d'entrée et le signal de sortie. Ils font l'objet de beaucoup d'attention, afin d'avoir les meilleures mesures possibles.
+
+
+\section{Choix des matériaux}
+Parlons tout d'abord des câbles de descente. Ceux-ci véhiculent le bruit thermique d'étage en étage, ce que nous voulons limiter au maximum.
+
+Nous ferons donc le choix de câbles atténuant le signal afin de limiter l'apport de bruit. Ceci permet de plus de limiter les ponts thermiques entre étages dûs à la conductivité des câbles.
+\newline
+
+Les câbles DC sont alors :
+\begin{itemize}
+    \item des câbles coaxiaux entre 300K et 800mK, peu résistifs (le signal est suffisant pour avoir un bon rapport signal/bruit)
+    \item des câbles de Manganin, très résistif, jusqu'à 20mK (l'étage le plus froid)
+    \item des câbles peu résistifs jusqu'à la chambre d'expérience
+\end{itemize}
+
+et les câbles RF de descente sont :
+\begin{itemize}
+    \item en Cuivre-Béryllium, thermalisé à chaque étage, jusqu'à 20mK. Le CuBe est beaucoup plus résistif que le Cuivre.
+    \item en Cuivre jusqu'à la chambre d'expérience
+\end{itemize}
+
+Les câbles sont cintrés en "U" entre chaque étage, afin de limiter les radiations au maximum. Ceci permet de plus d'avoir une certaine souplesse dans les câbles pour les connecter sans trop de difficultés.
+
+\paragraph*{Pour le câble de remontée,} on raisonne différemment : il faut atténuer le signal le moins possible, jusqu'à l'amplificateur haute fréquence qui est situé à 4K (sa température nominale de fonctionnement). Un câble rigide de Niobium-Titane est alors utilisé.
+
+Afin de limiter le "retour" de signal de l'amplificateur par ce câble, on thermalise deux circulateurs à 20mK. On utilise des câbles de Cuivre pour les connexions avec la chambre d'expérience.
+
+%\section{Principe des câbles coaxiaux}
 \section{Thermalisation électronique}
+Une grande partie du bruit provient de la température électronique. Si les câbles ne sont pas bien thermalisés, elle n'est pas assez faible et on risque même de ne mesurer qu'un bruit à 300K.
 
-\section{Filtrage des lignes DC (utile ici ?)}
+Les câbles coaxiaux sont thermalisés à chaque étage par des pinces, reliées par des câbles de cuivre jusqu'aux platines du cryostat. L'ensemble des pièces est bien sûr doré pour avoir les meilleurs contacts thermiques possibles ; on utilise aussi de l'Apiezon N, une graisse cryogénique pour boucher les pores des parois en contact, à l'instar de la pâte thermique de nos processeurs.
+\newline
+
+Les câbles DC sont thermalisés à chaque étage par des pinces dorées grâce à de la Stycast. Cette époxy permet une très bonne thermalisation des câbles fins aux presses dorées et montées sur les platines du cryostat.
+
+Une thermalisation s'effectue aussi au niveau du boîtier de thermalisation où les câbles font des méandres pour assurer une bonne thermalisation électronique.
+
+\section{Filtrage des lignes DC}
+En plus de la thermalisation, les lignes DC sont filtrées à l'étage 20mK. Un premier filtrage est effectué dans le boîtier de thermalisation à l'aide de deux filtres Passe-Bas RC consécutifs.
+
+Un second filtrage est effectué grâce à l'Eccosorb. Cette résine composite à base d'époxy (même fabricant que la Stycast, mêmes solutions) absorbe très efficacement les micro-ondes résultant du bruit électronique.
+
+Il a donc fallu mettre en place un petit boîtier, dans lequel nous faisons passer 17 câbles bleus de 80cm, compartimenté pour que l'Eccosorb n'abîme pas les prises lors du durcissement et des cycles de refroidissement. J'ai donc décidé de dessiner des séparations qui ont été imprimées en 3D en PLA. En effet ce matériau, bien que très commun pour l'impression 3D, s'est avérée utilisable en ultra-vide et à des températures très basses.
+
+
 
 \section{Fabrication des câbles coaxiaux}
 
