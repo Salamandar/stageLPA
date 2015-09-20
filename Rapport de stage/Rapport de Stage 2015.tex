@@ -197,8 +197,66 @@ Un second filtrage est effectué grâce à l'Eccosorb. Cette résine composite �
 Il a donc fallu mettre en place un petit boîtier, dans lequel nous faisons passer 17 câbles bleus de 80cm, compartimenté pour que l'Eccosorb n'abîme pas les prises lors du durcissement et des cycles de refroidissement. J'ai donc décidé de dessiner des séparations qui ont été imprimées en 3D en PLA. En effet ce matériau, bien que très commun pour l'impression 3D, s'est avérée utilisable en ultra-vide et à des températures très basses.
 
 
-
 \section{Fabrication des câbles coaxiaux}
+Comme je l'ai précisé plus haut, les signaux RF sont véhiculés par des câbles coaxiaux semi-rigides.
+
+J'ai donc procédé intégralement à la fabrication et la caractérisation de ces câbles.
+
+La moindre imperfection des câbles coaxiaux se ressent fortement sur leur atténuation -- nous verrons cela plus tard -- , il faut donc les manier et les cintrer en faisant attention à ne pas les tordre.
+
+\paragraph*{Dénudage} Il faut dénuder quelques millimètres du câble pour souder la pin sur l’âme du
+câble coaxial. On utilisera le support 21B ainsi que la petite scie. Il faut aller doucement
+sans appuyer, jusqu’à ce qu’on sente que c’est "lisse".
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[height=0.48\textwidth]{Images/Coax/1}
+        \quad
+        \includegraphics[height=0.48\textwidth]{Images/Coax/2}
+        \caption{Dénudage d'un câble coaxial}
+        \label{fig:}
+    \end{center}
+\end{figure}
+
+\paragraph*{Soudure de la pin centrale} On fixe la pin sur l’âme du câble, puis on serre le tout en
+place avec la pièce W60 Il ne faut pas oublier l’entretoise W56 entre la pin et l’isolant
+encore en place.
+Pour souder il suffit de chauffer l’extérieur de la pin tout en positionnant le fil d’étain sur
+le trou sur le bord de la pin.
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.60\textwidth]{Images/Coax/3}
+        \caption{Pin centrale soudée sur le câble}
+        \label{fig:}
+    \end{center}
+\end{figure}
+
+\paragraph*{Soudure de la prise extérieur} On fixe sur la prise mâle une prise femelle factice W14M
+(81) qui permet de positionner comme il faut la prise. Comme à l’étape précédente on
+serre le tout en place.
+Le plus efficace est de faire un tortillon d’étain au-dessus de la prise, que l’on chauffe. En
+étant un peu patient l’étain va fondre et rentrer naturellement dans la prise.
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[height=0.48\textwidth]{Images/Coax/4}
+        \quad
+        \includegraphics[height=0.48\textwidth]{Images/Coax/5}
+        \caption{Soudure de la prise extérieure}
+        \label{fig:}
+    \end{center}
+\end{figure}
+
+\paragraph*{Fixation de l’isolant}  La dernière étape est de mettre l’isolant entre la prise et la pin. on
+utilise la pièce W52 (W53) que l’on serre à la clé dynamométrique. On place l’isolant à
+l’intérieur, et on pousse d’un coup avec la pièce complémentaire.
+Mesure du câble nécessaire Maintenant il faut prendre la dimension de câble à couper.
+Sur le montage il faut prendre la dimension entre les deux{}
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.60\textwidth]{Images/Coax/6}
+        \caption{Fixation de l’isolant}
+        \label{fig:}
+    \end{center}
+\end{figure}
 
 \section{Caractérisation des câbles coaxiaux}
 
