@@ -3,7 +3,7 @@ Le câblage du cryostat consiste en deux parties:
 \paragraph*{Les câbles DC: }ils véhiculent les signaux continus. Au nombre de 17, ils sont thermalisés à chaque étage pour limiter le bruit thermique.
 \paragraph*{Les câbles coaxiaux: }les deux grilles rapides, le signal d'entrée et le signal de sortie. Ils font l'objet de beaucoup d'attention, afin d'avoir les meilleures mesures possibles.
 
-\vspace*{0.8cm}
+\vspace*{0.2cm}
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.7\textwidth]{Images/Cablage_schema}
@@ -124,15 +124,15 @@ Une tresse métallique soudée à la masse entoure donc les câbles jusqu'au bo�
 
 
 \section{Fabrication des câbles coaxiaux}
-Comme je l'ai précisé plus haut, les signaux RF sont véhiculés par des câbles coaxiaux semi-rigides.
-
-J'ai donc procédé intégralement à la fabrication et la caractérisation de ces câbles.
+Comme je l'ai précisé plus haut, les signaux RF sont véhiculés par des câbles coaxiaux semi-rigides. J'ai donc procédé intégralement à la fabrication et la caractérisation de ces câbles.\newline
 
 La moindre imperfection des câbles coaxiaux se ressent fortement sur leur atténuation -- nous verrons cela plus tard -- , il faut donc les manier et les cintrer en faisant attention à ne pas les tordre.
 
+\subsection{Étapes de fabrication}
+Je vais ici décrire les différentes étapes de fabrication d'un câble coaxial connectorisé. Elles peuvent être trouvées en annexe dans le guide de câblage.
+
 \paragraph*{Dénudage} Il faut dénuder quelques millimètres du câble pour souder la pin sur l’âme du
-câble coaxial. On utilisera le support 21B ainsi que la petite scie. Il faut aller doucement
-sans appuyer, jusqu’à ce qu’on sente que c’est "lisse".
+câble coaxial, à l'aide d'une petite scie.
 \begin{figure}[h]
     \begin{center}
         \includegraphics[height=0.48\textwidth]{Images/Coax/1}
@@ -143,11 +143,8 @@ sans appuyer, jusqu’à ce qu’on sente que c’est "lisse".
     \end{center}
 \end{figure}
 
-\paragraph*{Soudure de la pin centrale} On fixe la pin sur l’âme du câble, puis on serre le tout en
-place avec la pièce W60 Il ne faut pas oublier l’entretoise W56 entre la pin et l’isolant
-encore en place.
-Pour souder il suffit de chauffer l’extérieur de la pin tout en positionnant le fil d’étain sur
-le trou sur le bord de la pin.
+\paragraph*{Soudure de la pin centrale} On fixe une broche sur l’âme du câble, puis on serre le tout en
+place. Pour prévoir la dilatation du diélectrique lors de la soudure, on place une petite entretoise juste avant la broche.
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.60\textwidth]{Images/Coax/3}
@@ -156,11 +153,7 @@ le trou sur le bord de la pin.
     \end{center}
 \end{figure}
 
-\paragraph*{Soudure de la prise extérieur} On fixe sur la prise mâle une prise femelle factice W14M
-(81) qui permet de positionner comme il faut la prise. Comme à l’étape précédente on
-serre le tout en place.
-Le plus efficace est de faire un tortillon d’étain au-dessus de la prise, que l’on chauffe. En
-étant un peu patient l’étain va fondre et rentrer naturellement dans la prise.
+\paragraph*{Soudure de la prise extérieure} On fixe sur la prise mâle une prise femelle factice qui permet de positionner à la distance correcte la prise mâle. Celle-ci a une partie mobile avec le pas de vis.
 \begin{figure}[h]
     \begin{center}
         \includegraphics[height=0.48\textwidth]{Images/Coax/4}
@@ -171,11 +164,8 @@ Le plus efficace est de faire un tortillon d’étain au-dessus de la prise, que
     \end{center}
 \end{figure}
 
-\paragraph*{Fixation de l’isolant}  La dernière étape est de mettre l’isolant entre la prise et la pin. on
-utilise la pièce W52 (W53) que l’on serre à la clé dynamométrique. On place l’isolant à
-l’intérieur, et on pousse d’un coup avec la pièce complémentaire.
-Mesure du câble nécessaire Maintenant il faut prendre la dimension de câble à couper.
-Sur le montage il faut prendre la dimension entre les deux{}
+\paragraph*{Fixation de l’isolant}  La dernière étape est de mettre un petit cylindre diélectrique entre la prise et la broche. On utilise alors une pièce creuse qui se visse dans le connecteur pour enfoncer le diélectrique.
+
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.60\textwidth]{Images/Coax/6}
@@ -184,9 +174,27 @@ Sur le montage il faut prendre la dimension entre les deux{}
     \end{center}
 \end{figure}
 
+\paragraph*{Mesure du câble nécessaire} Après avoir connectorisé une extrémité du câble, il faut mesurer précisément la longueur de câble nécessaire. Il faut alors prendre en compte la longueur de câble qui se trouve dans le connecteur (sinon, il manquera quelques millimètres).
 
+\begin{center}
+    \includegraphics[width=0.40\textwidth]{Images/Coax/mesure}
+    \label{coax_mesure}
+\end{center}
 
+\newpage
+\paragraph*{Cintrage des câbles coaxiaux} Comme évoqué plus haut, les câbles doivent être cintrés entre chaque étage du cryostat. Néanmoins la fragilité des câbles nous impose de respecter un rayon de courbure minimal de 9mm.
 
+Une cintreuse "sur mesure" permet de cintrer les câble correctement.
+
+Pour les mesures, il faut prendre en compte 28mm de câble pour faire un demi-tour. Un cintrage en "U" nécessite alors 35mm de câble de plus qu'un câble droit.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.60\textwidth]{Images/Coax/cintrage}
+        \caption{Câbles coaxiaux cintrés en "U" et connectés}
+        \label{coax_cintrage}
+    \end{center}
+\end{figure}
 
 
 
@@ -206,7 +214,7 @@ L'appareil dédié à cette tâche est le VNA (Vector Network Analyzer) ou PNA (
     \end{center}
 \end{figure}
 
-En se plaçant sur un canal de mesure, on calibre l'appareil avec les câbles flexibles supplémentaires, puis on connecte notre câble coaxial.
+En se plaçant sur un canal de mesure, on effectue une calibration électronique (à l'aide d'un boîtier externe connecté au PNA) avec les câbles flexibles supplémentaires, puis on connecte notre câble coaxial.
 
 \begin{figure}
     \begin{center}
@@ -215,3 +223,13 @@ En se plaçant sur un canal de mesure, on calibre l'appareil avec les câbles fl
         \label{Carac1}
     \end{center}
 \end{figure}
+
+\subsection{Paramètres du PNA}
+\begin{description}
+    \item[Gamme de mesure :] 1GHz - 20GHz et 4-8GHz
+    \item[Nombre de points :] 12801
+    \item[Puissance :] -20dB et Power On
+    \item[IF Bandwidth :] 1kHz
+\end{description}
+
+On effectue deux séries de mesure, entre 1 et 20GHz et entre 4 et 8GHz.
