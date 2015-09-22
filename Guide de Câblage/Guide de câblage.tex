@@ -44,43 +44,16 @@
 \section{Lignes DC}
 \input{DC}
 
-\section{Boîtier de filtrage}
-\input{BoitierDeFiltrage}
-
-
-\section{Câblage du porte-échantillon (commun RF et DC)}
-\begin{BOM}
-    \item 0 \fois Vis M2
-    \item 1 \fois Prise \uD mâle
-    \item 17 \fois Barette de connexion
-\end{BOM}
-\subsection{Cylindre support du porte-échantillon}
-Ce cylindre est assez fragile, il faut donc faire attention à ne pas le tordre.\medskip
-
-Les lignes DC arrivent du bloc de filtrage (section \ref{subsec:DC/blocDeFiltrage}) par une prise \uD mâle. Le boîtier cylindrique et son couvercle (à fixer après la prise…) sont vissés par des vis M2. Ces lignes sont connectées par des barrettes au porte-échantillon.\medskip
-
-Les lignes RF arrivent par les trous sur la partie supérieure du tube. On place des 
-% TODO nom ?
-afin de relier les câbles semi-flexibles aux câbles du porte-échantillon. Un câble est semi-felxible tandis que les 3 autres sont flexibles (pour faciliter le branchement).
-
-\section{Bill of Materials complète}
-
+\section{Références utiles}
 \subsection{Vis}
 \begin{description}
-    \item[Vis M2] (10mm, 16mm, 20mm) \url{http://www.conrad.fr/ce/fr/overview/2304110/Vis-metriques;jsessionid=282D3A035F0B5C93D0FC843A18512CE3.ASTPCEN21?filterCatégorie=vis+cylindrique&filterNorme+DIN+%28vis%29=DIN+912&filterTaille+du+filetage=M2&filterPropriétés+du+matériau=A4&sort=Title-asc} 
-\end{description}
-\subsection{Prises}
-\begin{description}
-    \item[Prises \uD] 4 mâles + 4 femelles
+    \item[Vis M2] (10mm, 16mm, 20mm) \url{http://www.conrad.fr/ce/fr/overview/2304110/Vis-metriques?filterCatégorie=vis+cylindrique&filterNorme+DIN+(vis)=DIN+912&filterTaille+du+filetage=M2&filterPropriétés+du+matériau=A4&sort=Title-asc} 
 \end{description}
 
 
 \section{Caractérisation des câbles au VNA}
 \input{CaracVNA}
 
-
-
-\section{Tâbles de câblage}
-\input{tables_cablage}
+\newpage \section{Tâbles de câblage} \input{tables_cablage}
 
 \end{document}
