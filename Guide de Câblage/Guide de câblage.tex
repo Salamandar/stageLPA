@@ -1,10 +1,12 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
 \usepackage[francais]{babel}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{amsmath,array,graphicx,caption,lmodern,subcaption,tikz,url,xspace,wrapfig}
+\usepackage{textcomp,rotating,epic,eepic,pdfpages}
 \usepackage[hidelinks]{hyperref}
-\usepackage{xcolor}
+\usepackage[top=2cm,left=2.5cm,right=2.5cm,bottom=2cm]{geometry} % Géométrie de la page, modifier selon le besoin
 \hypersetup{
     colorlinks,
     linkcolor={blue!20!black},
@@ -14,6 +16,11 @@
 
 \newcommand{\fois}{$\times$ }
 \newcommand{\uD}{$\mu$D }
+% Symbole ×
+\newcommand{\x}{$\times$ }
+% Texte de couleur rouge pour les lignes haute impédance
+\newcommand{\R}[1]{\textcolor{red}{#1}}
+
 \newenvironment{BOM}
   {% \begin{out}
     \paragraph{B.o.M : } \begin{itemize}%
@@ -21,7 +28,7 @@
     \end{itemize}\medskip%
   }
 
-\title{Guide de câblage du cryostat à dillution}
+\title{Guide de câblage du cryostat à dilution}
 \author{Félix Piédallu}
 \date{Juin 2015}
 \begin{document}
@@ -29,48 +36,16 @@
 \maketitle
 \tableofcontents
 
-\begin{abstract}
-%Dans le cadre de mon stage, j'ai été amené à continuer le câblage du cryostat à dillution de Laure Bruhat.
-\end{abstract}
 
-\section{Précautions à prendre}
-\subsection{Câbles RF}
-Les câbles RF coaxiaux sont assez fragiles. Il faut faire attention à ne pas les tordre. Notamment, il faut utiliser la clé dynamométrique pour visser les prises.
+\section{Câbles coaxiaux}
+\input{LignesRF}
 
-\subsection{Prises uD}
-Les prises \uD permettent de brancher les lignes DC. Il faut faire attention à ne pas trop appuyer sur les pattes pendant la soudure au risque de les casser (pas dramatique mais pas très pratique). Il faut mettre de la gaine thermorétractable sur au moins un câble sur deux (j'ai aussi mis de la grosse gaine thermo pour isoler les deux lignes).
+\newpage
+\section{Lignes DC}
+\input{DC}
 
-\section{Câblage des lignes DC}
-\subsection{Thermalisation des lignes à 200mK (1K?)}
-\subsubsection{}
-
-\subsection{Bloc de filtrage}
-\label{subsec:DC/blocDeFiltrage}
-\begin{BOM}
-    \item 10 \fois Vis M2
-    \item 2 \fois Prises \uD femelle
-    \item 4 \fois Vis M1 + écrou + 2 rondelles (pour les prises)
-    \item \fois 
-\end{BOM}
-
-\subsubsection{Connexions du bloc}
-Le bloc est connecté grâce à des prises \uD. Les vis d'entrée sont "maison", les vis de sortie sont des vis Allen 2.5mm.
-
-\subsubsection{Compartimentage du bloc}
-Afin de filtrer les micro-ondes des lignes DC, nous faisons passer les 17 câbles par un boîtier rempli d'Écosorb.
-
-Malheureusement, l'Écosorb peut abîmer les soudures et les câbles au bout de quelques cycles de refroidissement. Nous avons donc décidé de compartimenter ce boîtier pour protéger les connexions.
-
-Des pièces en PLA vont alors être imprimées. Elles ont été dessinées grâce à OpenSCAD et converties au format STL (que l'on peut trouver sur mon dépôt Git).
-
-Les câbles sont enroulés (autour d'un tournevis ou d'un câble coax par exemple), afin de pouvoir mettre les 17 câbles dans le boîtier.
-
-\section{Câblage des lignes RF}
-
-\subsection{}
-\begin{BOM}
-    \item  \fois
-\end{BOM}
+\section{Boîtier de filtrage}
+\input{BoitierDeFiltrage}
 
 
 \section{Câblage du porte-échantillon (commun RF et DC)}
@@ -88,10 +63,24 @@ Les lignes RF arrivent par les trous sur la partie supérieure du tube. On place
 % TODO nom ?
 afin de relier les câbles semi-flexibles aux câbles du porte-échantillon. Un câble est semi-felxible tandis que les 3 autres sont flexibles (pour faciliter le branchement).
 
-\subsection{Porte-échantillon}
-
-
 \section{Bill of Materials complète}
-\input{Bill_of_Materials_complete}
+
+\subsection{Vis}
+\begin{description}
+    \item[Vis M2] (10mm, 16mm, 20mm) \url{http://www.conrad.fr/ce/fr/overview/2304110/Vis-metriques;jsessionid=282D3A035F0B5C93D0FC843A18512CE3.ASTPCEN21?filterCatégorie=vis+cylindrique&filterNorme+DIN+%28vis%29=DIN+912&filterTaille+du+filetage=M2&filterPropriétés+du+matériau=A4&sort=Title-asc} 
+\end{description}
+\subsection{Prises}
+\begin{description}
+    \item[Prises \uD] 4 mâles + 4 femelles
+\end{description}
+
+
+\section{Caractérisation des câbles au VNA}
+\input{CaracVNA}
+
+
+
+\section{Tâbles de câblage}
+\input{tables_cablage}
 
 \end{document}
