@@ -1,9 +1,9 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
 \usepackage{amsmath,array,graphicx,caption,lmodern,subcaption,tikz,url,xspace,wrapfig}
 \usepackage{textcomp,xcolor,rotating,epic,eepic,pdfpages}
-\usepackage[francais]{babel}
 \addto{\captionsfrench}{\renewcommand{\abstractname}{Introduction}}
 \usepackage[top=2cm,left=2.5cm,right=2.5cm,bottom=2cm]{geometry} % Géométrie de la page, modifier selon le besoin
 \usepackage[colorlinks,linkcolor=black, urlcolor=blue]{hyperref}
@@ -43,11 +43,18 @@ Les sujets de recherche sont essentiellement concentrés autour de la spintroniq
 \chapter{Le câblage DC et RF}
 \input{3.Cablage}
 
-\chapter{Les résultats de l'expérience (avant et/ou après câblage)}
+\chapter*{Bilan}
+\addcontentsline{toc}{chapter}{Bilan}
 
-\chapter{Bilan}
-\section{Guide de câblage, d'utilisation du VNA,…}
-\chapter*{Conclusion}
+L'expérience a donc pu être câblée 
+
+Ce stage a été une opportunité pour moi de découvrir l'environnement des laboratoires de recherche, que nous n'avons pu apercevoir que rapidement pendant notre projet de recherche. Outre ma mission principale, j'ai pu m'intégrer à l'équipe Hybrid Quantum Circuits et comprendre les différents thèmes gravitant autour de la spintronique et l'étude des nanotubes de carbone.
+
+
+\section*{Guide de câblage, d'utilisation du VNA,…}
+\addcontentsline{toc}{section}{Guide de câblage, d'utilisation du VNA,…}
+
+%\chapter*{Conclusion}
 %\input{6.Conclusion}
 
 \bibliographystyle{unsrt}
