@@ -9,8 +9,8 @@
 \usepackage[colorlinks,linkcolor=black, urlcolor=blue]{hyperref}
 \usepackage[babel=true,kerning=true]{microtype}
 \date{}
-\title{}
-\author{}
+\title{Rapport de Stage d'Application}
+\author{Félix Piédallu}
 
 \newcommand{\HeT}{$^3$He\xspace}
 \newcommand{\HeQ}{$^4$He\xspace}
@@ -46,20 +46,36 @@ Les sujets de recherche sont essentiellement concentrés autour de la spintroniq
 \chapter*{Bilan}
 \addcontentsline{toc}{chapter}{Bilan}
 
-L'expérience a donc pu être câblée 
+L'expérience a donc pu être câblée intégralement, malgré les aléas qui ont retardé l'installation de la bobine par CryoConcept.
 
-Ce stage a été une opportunité pour moi de découvrir l'environnement des laboratoires de recherche, que nous n'avons pu apercevoir que rapidement pendant notre projet de recherche. Outre ma mission principale, j'ai pu m'intégrer à l'équipe Hybrid Quantum Circuits et comprendre les différents thèmes gravitant autour de la spintronique et l'étude des nanotubes de carbone.
+J'ai malheureusement quitté le laboratoire avant de pouvoir finir le montage à l'intérieur du cryostat -- les câbles étaient néanmoins assemblés et les pinces de thermalisation en place à l'extérieur --, mais j'ai pu fournir un guide de câblage complet.\newline
 
+De nouvelles expériences n'ont pas encore été effectuées avec les nouveaux câbles, je ne peux donc pour le moment présenter comme résultats de mesures que les caractéristiques des câbles que j'ai fabriqués qui sont largement acceptables.\newline
 
-\section*{Guide de câblage, d'utilisation du VNA,…}
-\addcontentsline{toc}{section}{Guide de câblage, d'utilisation du VNA,…}
+Ce stage a été une opportunité pour moi de découvrir l'environnement des laboratoires de recherche, que nous n'avons pu apercevoir que rapidement pendant notre projet de recherche. Outre ma mission principale, j'ai pu m'intégrer à l'équipe Hybrid Quantum Circuits et comprendre les différents thèmes gravitant autour de la spintronique et l'étude des nanotubes de carbone.\newline
 
-%\chapter*{Conclusion}
-%\input{6.Conclusion}
+Enfin, ce stage m'a permis de mieux appréhender les problèmes expérimentaux qui peuvent se présenter, leurs solutions techniques ainsi que les limites auxquelles nous pouvons être confrontés.\newline
+
+Bien que je n'aie pas eu l'occasion de mettre  en application de façon apparente mes connaissances en physique durant mon stage, j'ai pu les enrichir par mon implication dans l'équipe. J'ai notamment observé le comportement d'un séparateur à paires de Cooper, ou l'effet Kondo par couplage des électrodes et du nanotube de carbone.
 
 \bibliographystyle{unsrt}
 \bibliography{bibliographie}
 
+\newpage
+\appendix
+\phantomsection
+\addcontentsline{toc}{part}{Annexes}
 
+\vspace*{8cm}
+\begin{center}
+\rule{\linewidth}{0.5mm}\\[0.7cm]
+{\huge{\bfseries Annexes}}\\[0.4cm]
+\rule{\linewidth}{0.5mm}\\[0.5cm]
+
+
+\end{center}
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Guide de câblage du cryostat}
 \includepdf[pages={-}]{../guide.pdf}
 \end{document}

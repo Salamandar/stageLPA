@@ -19,14 +19,14 @@ Le câblage du cryostat consiste en deux parties:
 Parlons tout d'abord des câbles de descente. Ceux-ci véhiculent le bruit thermique d'étage en étage, ce que nous voulons limiter au maximum.
 
 Nous faisons donc le choix de câbles atténuant le signal afin de limiter l'apport de bruit. Ceci permet en plus de limiter les ponts thermiques entre étages dûs à la conductivité des câbles.
-\par
+\newline
 
 Les câbles DC sont alors:
 \begin{itemize}
     \item des câbles coaxiaux souples entre 300K et 800mK, peu résistifs (le signal est suffisant pour avoir un bon rapport signal/bruit)
     \item des câbles de Manganin, très résistifs ($\sim45\Omega/m$), jusqu'à 20mK (l'étage le plus froid)
     \item des câbles peu résistifs ($\sim0.4\Omega/m$) jusqu'à la chambre d'expérience
-    \par
+    \newline
 \end{itemize}
 
 et les câbles RF coaxiaux semi-rigides de descente sont:
@@ -35,7 +35,7 @@ et les câbles RF coaxiaux semi-rigides de descente sont:
     \item en Cuivre jusqu'à la chambre d'expérience
 \end{itemize}
 
-Les câbles sont cintrés en "U" entre chaque étage, afin de limiter le passage des radiations au maximum. Ceci permet de plus d'avoir une certaine souplesse dans les câbles pour les connecter sans trop de difficultés.\par
+Les câbles sont cintrés en "U" entre chaque étage, afin de limiter le passage des radiations au maximum. Ceci permet de plus d'avoir une certaine souplesse dans les câbles pour les connecter sans trop de difficultés.\newline
 
 Enfin, on rajoute à chaque étage un atténuateur (valeur en rouge sur le schéma). Ceci permet d'envoyer en amont du cryostat un signal très fort, qui détruirait les échantillons, pour avoir dès le départ un rapport signal/bruit très bon.
 
@@ -51,10 +51,10 @@ Afin de limiter le "retour" de signal de l'amplificateur par ce câble, on therm
 %\section{Principe des câbles coaxiaux}
 \section{Thermalisation électronique}
 Une grande partie du bruit provient de la température électronique. Si les câbles ne sont pas bien thermalisés, on risque de ne mesurer qu'un bruit à 300K.
-\par
+\newline
 
 Les câbles coaxiaux sont thermalisés à chaque étage du cryostat par des pinces, reliées par des câbles de cuivre jusqu'aux platines du cryostat. L'ensemble des pièces est bien sûr doré pour avoir les meilleurs contacts thermiques possibles ; les pores des parois en contact sont bouchées par de l'Apiezon N, à l'instar de la pâte thermique de nos processeurs.
-\par
+\newline
 
 Les câbles DC sont thermalisés à chaque étage par des presses dorées grâce à de la Stycast. Cette époxy permet une très bonne thermalisation des câbles fins aux presses dorées et montées sur les platines du cryostat.
 
@@ -93,7 +93,7 @@ Un second filtrage est effectué grâce à l'Eccosorb. Cette résine composite �
 Il a donc fallu mettre en place un petit boîtier, dans lequel nous faisons passer 17 câbles bleus de 80cm, compartimenté pour que l'Eccosorb n'abîme pas les prises lors du durcissement et des cycles de refroidissement.
 
 J'ai donc décidé de dessiner des pièces en 3D sous OpenSCAD afin de former ces compartiments. Après quelques recherches, il est apparu que le matériau le plus utilisé en impression 3D, le PLA, peut être utilisé dans un cryostat (bien que jamais utilisé jusqu'ici).
-\par
+\newline
 
 En fait, beaucoup de matériaux ne sont pas compatibles avec de telles applications. Notamment, la faible pression dans le cryostat peut faire dégazer les matériaux (air dans les parois poreuses, ou des composants du matériau lui-même qui s'évapore). La plupart des matériaux élastiques sont dans ce cas.
 
@@ -127,7 +127,7 @@ Une tresse métallique soudée à la masse entoure donc les câbles jusqu'au bo�
 
 \section{Fabrication des câbles coaxiaux}
 Comme je l'ai précisé plus haut, les signaux RF sont véhiculés par des câbles coaxiaux semi-rigides. J'ai donc procédé intégralement à la fabrication et la caractérisation de ces câbles.
-\par
+\newline
 
 La moindre imperfection des câbles coaxiaux se ressent fortement sur leur atténuation -- nous verrons cela plus tard -- , il faut donc les manier et les cintrer en faisant attention à ne pas les tordre.
 
@@ -202,13 +202,14 @@ Pour les mesures, il faut prendre en compte 28mm de câble pour faire un demi-to
 
 
 
-\newpage
-\section{Caractérisation des câbles coaxiaux}
+\chapter{Caractérisation des câbles coaxiaux}
 
 Maintenant que les câbles ont été cintrés et connectorisés, il faut mesurer leur caractéristique atténuation/fréquence. D'une part pour vérifier si les câbles sont utilisables, et d'autre part pour avoir les valeurs exactes d'atténuation afin de calibrer nos mesures à fréquence fixée.
 
 L'appareil dédié à cette tâche est le VNA (Vector Network Analyzer) ou PNA (Performance Network Analyzer). L'équipe a récemment fait l'acquisition d'un PNA N5242 de Agilent.
 
+Les graphes obtenus représentent l'atténuation en dB, qui est l'unité de mesure habituelle pour les câbles coaxiaux.
+%TODO Finir le paragraphe
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.65\textwidth]{Images/VNA}
@@ -219,15 +220,8 @@ L'appareil dédié à cette tâche est le VNA (Vector Network Analyzer) ou PNA (
 
 En se plaçant sur un canal de mesure, on effectue une calibration électronique (à l'aide d'un boîtier externe connecté au PNA) avec les câbles flexibles supplémentaires, puis on connecte notre câble coaxial.
 
-\begin{figure}[ht]
-    \begin{center}
-        \includegraphics[width=0.65\textwidth]{Images/Caracs/abime2.png}
-        \caption{La caractéristique d'un câble correct(vert) et un abîmé (violet)}
-        \label{Carac1}
-    \end{center}
-\end{figure}
-
-\subsection{Paramètres du PNA}
+\newpage
+\section{Paramètres du PNA}
 \begin{description}
     \item[Gamme de mesure :] 1GHz - 20GHz et 4-8GHz
     \item[Nombre de points :] 12801
@@ -236,3 +230,45 @@ En se plaçant sur un canal de mesure, on effectue une calibration électronique
 \end{description}
 
 On effectue deux séries de mesure, entre 1 et 20GHz et entre 4 et 8GHz.
+
+\section{Résultats attendus}
+
+\begin{itemize}
+    \item L'atténuation augmente avec la fréquence
+    \item Elle est comprise entre -0.5dB et -2.5dB
+    \item Jusqu'à 8GHz, l'atténuation doit être assez stable (peu de sinusoïdale) : L'essentiel des mesures est effectée entre 4 et 8GHz, d'où la série de mesures restreinte à cette gamme.
+\end{itemize}
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{Images/Caracs/abime2.png}
+        \caption{La caractéristique d'un câble correct(vert) et un abîmé (violet)}
+        \label{Carac1}
+    \end{center}
+\end{figure}
+
+Néanmoins un câble très cintré n'est pas forcément synonyme de mauvaise caractéristique.
+
+
+\begin{figure*}[ht]
+    \centering
+    \begin{subfigure}[t]{0.40\textwidth}
+        \centering
+        \includegraphics[height=1.2\textwidth]{Images/Coax/Tres_cintre}
+        \caption{Câble cintré à plus de 270\textdegree }
+    \end{subfigure}%
+    \begin{subfigure}[t]{0.6\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{Images/Caracs/Tres_cintre}
+        \caption{Caractéristique très bonne}
+    \end{subfigure}
+    \caption{Câble très cintré à bonne caractéristique}
+\end{figure*}
+
+
+\newpage
+\section{Guide de câblage}
+En complément du travail de câblage que j'ai effectué, j'ai écrit un guide de câblage détaillant les étapes à suivre afin de connectoriser un câble coaxial, ainsi que pour le caractériser.\newline
+
+Celui-ci se trouve en annexe. Il détaille aussi la mise en place des boîtier de filtrage et l'utilisation du VNA.
+
