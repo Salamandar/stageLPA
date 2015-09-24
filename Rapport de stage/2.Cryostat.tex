@@ -1,4 +1,4 @@
-Afin d'accéder à des températures de l'ordre que la dizaine de milliKelvins, l'expérience est située dans un cryostat à dilution sèche.
+Afin d'obtenir une cohérence spatiale et un environnement peu bruité, il est nécessaire d'atteindre des températures de l'ordre de quelques milliKelvins. Pour cela on utilise un cryostat à dilution sèche.
 \section{Principe d'un cryostat à dilution}
 \begin{figure}[h]
   \begin{center}
@@ -29,21 +29,25 @@ Lorsque la pompe diminue la pression dans cette chambre de mélange, la phase di
 L'\HeT va essentiellement s'évaporer du mélange. En effet, il a une pression partielle bien plus évelée que l'\HeQ, qui lui va en grande partie rester confiné dans le réservoir et dans la chambre de mélange.
 \newline
 
-La vapeur va alors passer par la pompe (à température ambiante), être refroidie pour revenir jusqu'à la chambre de mélange où la pression osmotique entre les deux phases va augmenter d'autant plus: de l'\HeT va alors passer dans la phase diluée en refroidissant le cryostat, et recommencer le processus. \newline
+La vapeur, constituée donc essentiellement d'\HeT, va alors passer par la pompe (à température ambiante), être refroidie pour revenir jusqu'à la chambre de mélange où la pression osmotique entre les deux phases va augmenter d'autant plus: de l'\HeT va alors passer dans la phase diluée en refroidissant le cryostat, et recommencer le processus. \newline
 
 Les échangeurs thermiques permettent à l'\HeT réinjecté d'être remis à basse température pour ne pas réchauffer l'ensemble du cryostat. Cela permet aussi d'augmenter la température dans le réservoir supérieur et permettre à l'\HeT de s'évaporer.
 
+Une résistance chauffante est située au niveau du réservoir, pour la même raison.
+
 \section{Cryostat sec: Principe du tube à gaz pulsé}
 Le mélange doit être pré-refroidi avant d'être injecté dans le cryostat.\newline
-La plupart des cryostats utilisent un bain d'azote liquide à 77K qui permet aussi de nettoyer le mélange des impuretés, un bain d'\HeQ liquide à 4,2K, puis un bain d'\HeQ liquide à faible pression à 1K (diminuer la pression de l'\HeQ permet d'abaisser son point de condensation).
+Il passe tout d'abord par un bain d'azote liquide à 77K qui permet aussi de nettoyer le mélange des impuretés (le "piège").
 
-Ces derniers bains nécessitant un apport d'\HeQ, il peuvent être remplacé par un tube à gaz pulsé, d'où l'appellation de cryostat sec (mis à part le bain d'azote liquide qui est à l'extérieur du cryostat).
+La plupart des cryostats utilisnt ensuite un bain d'\HeQ liquide à 4,2K, puis un bain d'\HeQ liquide à faible pression à 1K (diminuer la pression de l'\HeQ permet d'abaisser son point de condensation).
+
+Ces derniers bains nécessitant un apport supplémentaire d'\HeQ, il peuvent être remplacé par un tube à gaz pulsé, d'où l'appellation de cryostat sec (mis à part le bain d'azote liquide qui est à l'extérieur du cryostat).
 
 Un tube à gaz pulsé fonctionne selon un cycle proche du cycle de Stirling, grâce à un piston et un compresseur. Ceux-ci engendrent des vibrations importantes, qui pourraient empêcher toute mesure dans le cryostat. C'est pour cela que le tube pulsé est séparé du cryostat.
 
 \begin{figure}[ht]
     \begin{center}
-        \includegraphics[width=0.75\textwidth]{Images/Cryostat_PulseTube_Schema.png}
+        \includegraphics[width=0.65\textwidth]{Images/Cryostat_PulseTube_Schema.png}
         \caption{Schéma du tube à gaz pulsé}
     \end{center}
 \end{figure}

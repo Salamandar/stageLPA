@@ -2,12 +2,15 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[colorlinks,linkcolor={blue!30!black},citecolor={blue!50!black},urlcolor={blue!80!black}]{hyperref}
 \usepackage{amsmath,array,graphicx,caption,lmodern,subcaption,tikz,url,xspace,wrapfig}
-\usepackage{textcomp,xcolor,rotating,epic,eepic,pdfpages}
-\addto{\captionsfrench}{\renewcommand{\abstractname}{Introduction}}
+\usepackage{textcomp,rotating,epic,eepic,pdfpages}
 \usepackage[top=2cm,left=2.5cm,right=2.5cm,bottom=2cm]{geometry} % Géométrie de la page, modifier selon le besoin
-\usepackage[colorlinks,linkcolor=black, urlcolor=blue]{hyperref}
 \usepackage[babel=true,kerning=true]{microtype}
+
+\addto{\captionsfrench}{\renewcommand{\abstractname}{Introduction}}
+\pdfsuppresswarningpagegroup=1
 \date{}
 \title{Rapport de Stage d'Application}
 \author{Félix Piédallu}
@@ -26,10 +29,19 @@
 \chapter*{Hybrid Quantum Circuits}
 L'équipe HQC fait partie du Laboratoire Pierre Aigrain, le laboratoire de l'ENS Ulm spécialisé dans la physique de la matière condensée et la physique mésoscopique.
 
-Basé à Paris, il regroupe autour de Takis Kontos et Audrey Cottet plusieurs doctorants : Matthieu Baillergeau, Matthieu Desjardins, Matthieu Dartiailh et Laure Bruhat, avec qui j'ai essentiellement travaillé durant mon stage.
+Elle regroupe autour de Takis Kontos et Audrey Cottet plusieurs doctorants : Matthieu Baillergeau, Matthieu Desjardins, Matthieu Dartiailh et Laure Bruhat, avec qui j'ai essentiellement travaillé durant mon stage.\newline
 
-Les sujets de recherche sont essentiellement concentrés autour de la spintronique et du transport quantique dans des nanotubes de carbone.
-%TODO remplir ce paragraphe
+L'équipe se concentre sur l'utilisation des nanotubes de carbone, en tant que double puits quantique ou qu'atome macroscopique (atome artificiel).
+
+Le nanotube de carbone est placé dans une cavité résonnante dont on fait varier les paramètres, et donc la fréquence de résonnance. Les sujets de recherche sont donc essentiellement concertés autour de la spintronique et du transport quantique dans de tels milieux.
+
+L'équipe met donc en place le modèle théorique d'une part, et s'occupe de la fabrication des échantillons et de la mise en place de l'expérience.\newline
+
+Le laboratoire est équipé d'un cryostat à Hélium3 (Oxford Heliox VL), d'un cryostat à dilution (Kelvinox Oxford MX250) et d'un cryostat à dilution sèche (Cryoconcept Cryofree), sur lequel j'ai travaillé dans le cadre de mon stage.
+
+
+
+
 
 \chapter*{Introduction} % Contexte du stage
 \input{0.Introduction}
@@ -46,7 +58,7 @@ Les sujets de recherche sont essentiellement concentrés autour de la spintroniq
 \chapter*{Bilan}
 \addcontentsline{toc}{chapter}{Bilan}
 
-L'expérience a donc pu être câblée intégralement, malgré les aléas qui ont retardé l'installation de la bobine par CryoConcept.
+L'expérience a donc pu être câblée intégralement, malgré quelques aléas qui ont retardé l'installation de la bobine par CryoConcept.
 
 J'ai malheureusement quitté le laboratoire avant de pouvoir finir le montage à l'intérieur du cryostat -- les câbles étaient néanmoins assemblés et les pinces de thermalisation en place à l'extérieur --, mais j'ai pu fournir un guide de câblage complet.\newline
 
