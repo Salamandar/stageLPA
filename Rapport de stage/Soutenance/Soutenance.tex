@@ -1,22 +1,49 @@
-\documentclass[8pt,a9paper]{beamer} \usepackage[utf8]{inputenc} \usepackage[francais]{babel} \usepackage[T1]{fontenc}
+\documentclass[10pt,a9paper,handout]{beamer} \usepackage[utf8]{inputenc} \usepackage[francais]{babel} \usepackage[T1]{fontenc}
 \usepackage{amsmath,amsfonts,amssymb,tikz,colortbl,lmodern,xspace,subfigure}
 \title{Mise en place d’une expérience à très basse température et étude d’effets quantiques dans des systèmes nanométriques}
 \author{Félix Piédallu}
-\date{}
+\date{5 octobre 2015}
+\institute{Grenoble INP Phelma}
+\setcounter{tocdepth}{1}
 
 \usetheme{Berlin}
 \usecolortheme{beaver}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\defbeamertemplate*{footline}{myfootline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.32\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
+    \hspace{4px}\insertshortauthor
+  \end{beamercolorbox}%
+  \hspace*{-5px}
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \insertshortinstitute
+  \end{beamercolorbox}%
+  \hspace*{-5px}
+  \begin{beamercolorbox}[wd=.36\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
+    \insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\setbeamertemplate{footline}[myfootline]
+
 
 \newcommand{\HeT}{$^3$He\xspace}
 \newcommand{\HeQ}{$^4$He\xspace}
 
 \begin{document}
 \begin{frame}
+    \vspace*{-.6cm}
     \maketitle
-    \vspace*{-1.5cm}
     \begin{center}
-    Filière PNS 2014-2015\\[1.2cm]
+    \vspace*{-3.3cm}
+    {\footnotesize Filière PNS 2014-2015}\\[1.2cm]
+    \vspace*{1.6cm}
     \includegraphics[width=50px]{Images/logo_phelma}\qquad
     \includegraphics[width=50px]{Images/logo_HQC}\qquad
     \hspace*{10px}
@@ -121,6 +148,7 @@
 \section{Le cryostat à dilution}
 \subsection{Principe du cryostat}
 \begin{frame}
+\vspace*{3mm}
 \begin{itemize}
     \item Extraction de l'\HeT du mélange dans le réservoir 
         ($Pp_{\: ^3\text{He}} \gg  Pp_{\: ^4\text{He}} $)
@@ -177,6 +205,7 @@
 
     \end{column}
     \begin{column}{0.4\textwidth}
+        \vspace*{6mm}
         \begin{figure}[H]
             \includegraphics[width=\textwidth]{Images/Cablage_schema}
         \end{figure}
@@ -188,13 +217,13 @@
 \begin{frame}
 \frametitle{Choix des matériaux}
 \begin{columns}
-\begin{column}{0.6\textwidth}
+\begin{column}{0.7\textwidth}
     \begin{description}
         \item[300K $\rightarrow$ 800mK]~\\
             Câbles coaxiaux
-        \item[\hspace*{11.5mm}800mK $\rightarrow$ 20mK]~\\
+        \item[\hspace*{13.5mm}800mK $\rightarrow$ 20mK]~\\
             Manganin (résistif)
-        \item[\hspace*{24.5mm} 20mK $\rightarrow$ porte-échantillons]~\\
+        \item[\hspace*{28.5mm} 20mK $\rightarrow$ porte-échantillons]~\\
             Câbles peu résistifs
     \end{description}
 \end{column}
@@ -218,8 +247,8 @@
     \begin{itemize}
         \item Diminuer le bruit électronique au fur et à mesure
         \vspace*{5mm}
-        \item Presses dorées à chaque étage
-        \item Stycast (époxy cryogénique)
+        \item Presses dorées à chaque étage \\
+        + Stycast (époxy cryogénique)
         \vspace*{5mm}
         \item Câbles résistifs pour isolation thermique
     \end{itemize}
@@ -249,7 +278,7 @@
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=\textwidth]{Images/Thermalisation/DC3_non_rotate}
-        \caption{Boîtier de thermalisation non soudé}
+        \caption{Boîtier non soudé}
     \end{center}
 \end{figure}
 \end{column}
@@ -266,7 +295,7 @@
     \item Compartimentage du boîtier\\
     \hspace*{1cm} $\rightarrow$ Impression 3D de prises
 \end{itemize}
-
+\vspace*{3mm}
 \begin{figure}[h]
     \centering
     \includegraphics[height=0.25\textwidth]{Images/Thermalisation/Filtrage3D}
@@ -285,6 +314,7 @@
     \item Protection au champ magnétique\\
 \end{itemize}
 
+\vspace*{3mm}
 \begin{figure}[h]
     \centering
     \includegraphics[height=0.35\textwidth]{Images/Tresse}
@@ -303,7 +333,7 @@
         \item[Étage 20mK]~\\
             Cuivre (faible impédance)
         \item[Remontée à 4K]~\\
-            Niobium-Titane (très faible impédance)
+            Niobium-Titane \\(très faible impédance)
         \item[Remontée (après ampli à 4K)]~\\
             Cuivre-Béryllium
     \end{description}
@@ -311,7 +341,7 @@
 \begin{column}{0.3\textwidth}
 \begin{figure}[h]
     \begin{center}
-        \includegraphics[width=\textwidth]{Images/Thermalisation/DC3_non_rotate}
+        \includegraphics[width=\textwidth]{Images/Coax}
         \caption{Les différents câbles coaxiaux}
     \end{center}
 \end{figure}
@@ -321,13 +351,8 @@
 
 \subsection{Fabrication d'un câble coaxial}
 \begin{frame}
-\frametitle{Dénudage}
+\frametitle{Dénudage et soudure de la pin centrale}
 \begin{columns}
-\begin{column}{0.5\textwidth}
-    \begin{description}
-        \item[]~\\
-    \end{description}
-\end{column}
 \begin{column}{0.5\textwidth}
 \begin{figure}[h]
     \begin{center}
@@ -335,17 +360,6 @@
         \caption{Dénudage d'un câble coaxial}
     \end{center}
 \end{figure}
-\end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}
-\frametitle{Soudure de la pin centrale}
-\begin{columns}
-\begin{column}{0.5\textwidth}
-    \begin{description}
-        \item[]~\\
-    \end{description}
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{figure}[h]
@@ -359,13 +373,9 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Prise extérieure}
+\frametitle{Prise extérieure et diélectrique}
 \begin{columns}
-\begin{column}{0.5\textwidth}
-    \begin{description}
-        \item[]~\\
-    \end{description}
-\end{column}
+
 \begin{column}{0.5\textwidth}
 \begin{figure}[h]
     \begin{center}
@@ -374,27 +384,17 @@
     \end{center}
 \end{figure}
 \end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}
-\frametitle{Emboutissage de l'isolant}
-\begin{columns}
-\begin{column}{0.5\textwidth}
-    \begin{description}
-        \item[]~\\
-    \end{description}
-\end{column}
 \begin{column}{0.5\textwidth}
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=\textwidth]{Images/Coax/6}
-        \caption{Pièce creuse montée sur le câble}
+        \caption{Emboutissage du diélectrique}
     \end{center}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Cintrage du câble}
@@ -438,5 +438,14 @@
 
 
 
-
+\begin{frame}
+    \begin{LARGE}
+    \begin{center}
+    \textbf{Merci de votre attention !}
+    \vspace{0.5cm}
+    
+    \textbf{Place aux questions.}
+    \end{center}
+    \end{LARGE}
+\end{frame}
 \end{document}
